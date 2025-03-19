@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: white;
+         margin-top: 20px; /* Matches the height of the top bar */
+
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+            max-width: 1000px;
+            width: 100%;
+            justify-content: center;
+            align-items: center;
+        }
+        .gallery a {
+            display: block;
+            text-decoration: none;
+            position: relative;
+            overflow: hidden;
+            border-radius: 5px;
+            width: 100%;
+            padding-top: 100%; /* Maintain square aspect ratio */
+            
+        }
+        .gallery img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 5px;
+            display: block;
+        }
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: opacity 0.3s ease-in-out;
+            font-size: 16px;
+            font-weight: bold;
+            text-align: center;
+        }
+        .gallery a:hover .overlay {
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+    <div class="gallery">
+        <a href="artwork1.html">
+            <img src="images/Apart.jpg" alt="Apart">
+            <div class="overlay">Apart</div>
+        </a>
+        <a href="artwork2.html">
+            <img src="images/LightDark.jpg" alt="Light/Dark">
+            <div class="overlay">Light/Dark</div>
+        </a>
+        <a href="works/maqamat.html">
+            <img src="images/maqamat.jpg" alt="Maqamat">
+            <div class="overlay">Maqamat</div>
+        </a>
+        <a href="artwork5.html">
+            <img src="images/amor.jpg" alt="Amor">
+            <div class="overlay">Amor</div>
+        </a>
+        <a href="artwork6.html">
+            <img src="images/agam.jpg" alt="Yaakov Agam">
+            <div class="overlay">Yaakov Agam</div>
+        </a>
+        <a href="artwork7.html">
+            <img src="images/infinite.jpg" alt="Infinite">
+            <div class="overlay">Infinite</div>
+        </a>
+        <a href="artwork8.html">
+            <img src="images/latentheat.jpg" alt="Latent Heat">
+            <div class="overlay">Latent Heat</div>
+        </a>
+       
+    </div>
+</body>
+</html>

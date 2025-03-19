@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Film & TV Projects</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: white;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .project {
+            max-width: 800px;
+            width: 100%;
+            margin-bottom: 40px;
+            text-align: center;
+        }
+        .project img {
+            width: 100%;
+            max-width: 600px;
+            height: auto;
+            border-radius: 5px;
+        }
+        .project p {
+            font-size: 16px;
+            color: #333;
+            margin-top: 10px;
+            padding: 0 10px;
+        }
+        .divider {
+            width: 80%;
+            height: 1px;
+            background-color: #ccc;
+            margin: 20px 0;
+        }
+        
+        @media (max-width: 768px) {
+            body {
+                padding: 10px;
+            }
+            .project p {
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+    
+    <div class="project">
+        <img src="images/start.jpg" alt="Press Start">
+        <p>A brief description of the first project goes here.</p>
+    </div>
+    <div class="divider"></div>
+    
+    <div class="project">
+        <img src="images/patrick.jpg" alt="Project 2">
+        <p>A brief description of the second project goes here.</p>
+    </div>
+    <div class="divider"></div>
+    
+    <div class="project">
+        <img src="images/project3.jpg" alt="Project 3">
+        <p>A brief description of the third project goes here.</p>
+    </div>
+    
+</body>
+</html>

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aviad Zinemanas</title>
+    <link rel="icon" type="images/x-icon" href="images/lightdark.ico">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
+<script>
+    if (window.innerWidth <= 768) {
+        window.location.href = "mobile.html"; // Redirects to mobile version
+    
+    }
+</script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: white;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+        }
+        .sidebar, .topbar {
+            background-color: #ffffff;
+        }
+        .sidebar {
+            width: 200px;
+            padding: 20px;
+            margin-top: auto;
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            position: fixed;
+            top: 100px;
+            left: 0;
+            height: calc(100vh - 80px);
+            justify-content: flex-start;
+            padding-bottom: 40px; /* Adds more space at the bottom */
+        }
+        .topbar {
+            width: 100%;
+            height: 80px;
+            padding: 15px;
+            font-size: 2rem;
+            font-weight: bold;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            padding-left: 20px;
+            z-index: 1000;
+        }
+        .submenu {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        .submenu a {
+            text-decoration: none;
+            color: black;
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+
+        .content-container {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: calc(100% - 200px);
+            margin-left: 200px;
+            height: calc(100vh - 80px);
+            position: relative;
+        }
+        iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+            margin-top: 80px;
+        }
+
+        .social-links {
+            margin-top: 20px;
+            display: flex;
+            flex-direction: row;  /* Aligns the icons horizontally */
+            justify-content: flex-start;  /* Aligns the icons to the left */
+            gap: 10px;
+            padding: 0px 0; /* Add vertical padding to prevent clipping */
+        }
+
+        .social-links a {
+            text-decoration: none;
+            color: black;
+            font-size: 24px;
+        }
+    </style>
+</head>
+<body>
+    <div class="topbar">Aviad Zinemanas</div>
+    <div class="sidebar">
+        <div class="submenu">
+            <a href="works.html" target="content-frame">Works</a>
+            <a href="music.html" target="content-frame">Music Production</a>
+            <a href="film.html" target="content-frame">Film/TV</a>
+            <a href="bio.html" target="content-frame">Bio</a>
+            <a href="contact.html" target="content-frame">Contact</a>
+        </div>
+        <!-- Social Links After Menu Items -->
+        <div class="social-links">
+            <a href="https://www.instagram.com/aviad.zinemanas/" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.youtube.com/@AviadZinemanas" target="_blank"><i class="fab fa-youtube"></i></a>
+            <a href="https://soundcloud.com/aviad" target="_blank"><i class="fab fa-soundcloud"></i></a>
+            <a href="https://aviad.bandcamp.com" target="_blank"><i class="fab fa-bandcamp"></i></a>
+            <a href="https://open.spotify.com/artist/6BhCcNhioIJmU7LUEL5C0j?si=3K0lznEZSqSwqZMv8Yqr8g" target="_blank"><i class="fab fa-spotify"></i></a>
+           
+        </div>
+    </div>
+    <div class="content-container">
+        <iframe name="content-frame" src="works.html"></iframe>
+    </div>
+</body>
+</html>

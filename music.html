@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: white;
+            margin-top: 20px;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+            max-width: 1000px;
+            width: 100%;
+            justify-content: center;
+            align-items: center;
+        }
+        .gallery a {
+            display: block;
+            text-decoration: none;
+            position: relative;
+            overflow: hidden;
+            border-radius: 5px;
+            width: 100%;
+            padding-top: 100%; /* Maintain square aspect ratio */
+        }
+        .gallery img, .media-player {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: opacity 0.3s ease-in-out;
+            font-size: 16px;
+            font-weight: bold;
+            text-align: center;
+        }
+        .gallery a:hover .overlay {
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+    <div class="gallery">
+        <!-- Bandcamp Example -->
+        <a href="javascript:void(0);" 
+           class="gallery-item" 
+           data-type="bandcamp"
+           data-url="https://bandcamp.com/EmbeddedPlayer/album=1369812522/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/transparent=true/">
+            <img src="images/zoe.jpg" alt="Violent Flowers">
+            <div class="overlay">Zoe Polanski - Violent Flowers</div>
+        </a>
+
+        <!-- YouTube Example -->
+        <a href="javascript:void(0);" 
+           class="gallery-item" 
+           ata-type="bandcamp"
+           data-url="https://bandcamp.com/EmbeddedPlayer/album=4129888419/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/track=2483430218/transparent=true/autoplay=1">
+            <img src="images/grundik.jpg" alt="Grundik & Slava - The Garbageman Song Remix ">
+            <div class="overlay">Grundik & Slava - The Garbageman Song Remix</div>
+        </a>
+
+         <a href="javascript:void(0);" 
+           class="gallery-item" 
+           data-type="youtube"
+           data-url="https://www.youtube.com/embed/7ZXSwDx48Rc?autoplay=1">
+            <img src="images/notime.jpg" alt="Yehezkel Raz - Chronology Of No Time Remix">
+            <div class="overlay">Yehezkel Raz - Chronology Of No Time Remix</div>
+        </a>
+
+        <a href="javascript:void(0);" 
+           class="gallery-item" 
+           data-type="youtube"
+           data-url="https://www.youtube.com/embed/uxWb8rKiK64?autoplay=1">
+            <img src="images/Virtual.jpg" alt="Virtual Drift">
+            <div class="overlay">Virtual Drift</div>
+        </a>
+
+        <a href="javascript:void(0);" 
+           class="gallery-item" 
+           data-type="youtube"
+           data-url="https://www.youtube.com/embed/HhK-1A3Mysw?autoplay=1">
+            <img src="images/orc.jpg" alt="O.R.C">
+            <div class="overlay">O.R.C</div>
+        </a>
+
+        <a href="javascript:void(0);" 
+           class="gallery-item" 
+           data-type="youtube"
+           data-url="https://www.youtube.com/embed/UjRXmkjxc5Y?autoplay=1">
+            <img src="images/density.jpg" alt="Density Wave">
+            <div class="overlay">Density Wave</div>
+        </a>
+
+         <a href="javascript:void(0);" 
+           class="gallery-item" 
+           data-type="youtube"
+           data-url="https://www.youtube.com/embed/1kIhmCbBrIg?autoplay=1">
+            <img src="images/villian.jpg" alt="Villian">
+            <div class="overlay">Villian</div>
+        </a>
+
+         <a href="javascript:void(0);" 
+           class="gallery-item" 
+           data-type="youtube"
+           data-url="https://www.youtube.com/embed/IVigThYKEVs?si=9nQ7o4t7TV7JWCRt?autoplay=1">
+            <img src="images/nova.jpg" alt="Nova">
+            <div class="overlay">Nova EP</div>
+        </a>
+
+         <a href="javascript:void(0);" 
+           class="gallery-item" 
+           data-type="youtube"
+           data-url="https://www.youtube.com/embed/xdB1YrZberc?autoplay=1">
+            <img src="images/pajaros.jpg" alt="Pajaros">
+            <div class="overlay">Pajaros</div>
+        </a>
+
+        <a href="javascript:void(0);" 
+           class="gallery-item" 
+           data-type="youtube"
+           data-url="https://www.youtube.com/embed/00wv0bfN8DE?autoplay=1">
+            <img src="images/lifatmat.png" alt="Li Fat Mat">
+            <div class="overlay">Shushan - Li Fat Mat</div>
+        </a>
+
+        <a href="javascript:void(0);" 
+           class="gallery-item" 
+           data-type="youtube"
+           data-url="https://www.youtube.com/embed/6Kl7kAAYB0k?autoplay=1">
+            <img src="images/wills.jpg" alt="Joove - Wills">
+            <div class="overlay">Joove - Wills</div>
+        </a>
+        <a href="javascript:void(0);" 
+           class="gallery-item" 
+           data-type="bandcamp"
+           data-url="https://bandcamp.com/EmbeddedPlayer/album=1300536469/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/transparent=true/">
+            <img src="images/howto.jpg" alt="Joove - How To Let Things Go">
+            <div class="overlay">Joove - How To Let Things Go</div>
+        </a>
+
+        <a href="javascript:void(0);" 
+           class="gallery-item" 
+           data-type="bandcamp"
+           data-url="https://bandcamp.com/EmbeddedPlayer/album=1598138941/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/transparent=true/">
+            <img src="images/unlock.jpg" alt="Joove - Unlock & Good Luck">
+            <div class="overlay">Joove - Unlock & Good Luck</div>
+        </a>
+     
+
+    </div>
+
+    <script>
+        document.querySelectorAll(".gallery-item").forEach(item => {
+            item.addEventListener("click", function() {
+                if (this.classList.contains("played")) return;
+                this.classList.add("played");
+
+                var imgElement = this.querySelector('img');
+                var overlayElement = this.querySelector('.overlay');
+                var mediaType = this.getAttribute("data-type");
+                var mediaURL = this.getAttribute("data-url");
+
+                imgElement.style.display = 'none';
+                overlayElement.style.opacity = '0';
+
+                var iframe = document.createElement('iframe');
+                iframe.src = mediaURL;
+                iframe.frameBorder = 0;
+                iframe.allow = "autoplay; encrypted-media"; 
+                iframe.classList.add('media-player');
+
+                iframe.style.position = "absolute";
+                iframe.style.top = "0";
+                iframe.style.left = "0";
+                iframe.style.width = "100%";
+                iframe.style.height = "100%";
+                iframe.style.borderRadius = "5px";
+
+                this.appendChild(iframe);
+            });
+        });
+    </script>
+</body>
+</html>
