@@ -23,13 +23,13 @@
             text-align: center;
         }
         .project img {
-            
-            max-width: 600px;
-            max-height: 200px;
-            width: auto;
-            border-radius: 5px;
-            object-fit: contain;
-        }
+    width: 100%; /* Makes image responsive */
+    max-width: 100%; /* Ensures it doesn’t exceed its container */
+    max-height: 200px; /* Limits the height */
+    height: auto; /* Maintains aspect ratio */
+    border-radius: 5px;
+    object-fit: cover; /* Ensures it fills the height properly */
+}
         .project-title {
             font-size: 18px;
             font-weight: bold;
