@@ -91,26 +91,28 @@
             border: none;
         }
 
-        social-links {
-    margin-top: auto;
+        .social-links {
     display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
+    justify-content: center; /* Centers the icons horizontally */
+    align-items: center;  /* Ensures vertical alignment */
+    gap: 15px; /* Adjust spacing between icons */
     padding: 10px;
     background-color: #ffffff;
     position: fixed;
     bottom: 0;
     width: 100%;
-    text-align: center;  /* Ensures centering */
+    text-align: center; /* Helps with alignment */
 }
 
 .social-links a {
+    display: flex; /* Ensures proper centering of the icons */
+    justify-content: center;
+    align-items: center;
     text-decoration: none;
     color: black;
     font-size: 24px;
-    text-align: center;
+    width: 40px; /* Ensures uniform spacing */
+    height: 40px;
 }
         @media (max-width: 768px) {
             .submenu {
