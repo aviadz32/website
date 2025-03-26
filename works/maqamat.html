@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Artwork Title</title>
+    <title>Maqamat</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
         
@@ -16,32 +16,60 @@
             flex-direction: column;
             align-items: center;
         }
-        h1 {
-            font-size: 2.5rem;
-            margin-bottom: 5px;
-        }
         .content {
-            margin-top: 20px;
             max-width: 800px;
-            text-align: center;
-        }
-        .content img {
             width: 100%;
-            max-width: 250px;
+            text-align: justify;
+        }
+        .image-container, .video-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        .image-container img {
+            max-width: 85%;
+            height: auto;
             border-radius: 5px;
         }
-        .description {
-            margin-top: 20px;
-            font-size: 1.1rem;
+        .video-container iframe {
+            width: 100%;
+            max-width: 350px;
+            height: 340px;
+            border-radius: 5px;
+        }
+        @media (max-width: 768px) {
+            .image-container img {
+                max-width: 100%;
+            }
         }
     </style>
 </head>
 <body>
-    
     <div class="content">
-        <h2>Maqamat</h2>
-        <img src="../images/maqamat.jpg" alt="Maqamat">
-        <p class="description">Maqamat (2017), a work made in collaboration with the musician Aviad Zinemanas, was born from a joint passion to reclaim the Arab music of early 20th-century Iraq. Innovative for its time, the forerunners of this musical trend were Jewish musicians, among them internationally acclaimed Ezra Aharon and Yusuf Zaarur. These musicians later immigrated to Israel and left their reputation behind. Recordings and archival materials from the estate of these musicians serve the artists as a starting point to dealing with situations of separation, diaspora and yearnings. Catalog text, ‘When Maqam is reduced to a place’ by Eyal Bizawe, is available here (English / Hebrew).</p>
+        
+        <div class="image-container">
+       
+            <img src="../images/maqamat2.jpg" alt="Maqamat Image 3">
+            
+        </div>
+        <p>
+            <b>Maqamat</b>, a work made in collaboration between visual artist Dor Zlekha Levy and musician Aviad Zinemanas, was born from their joint passion to reclaim the Arab music of early 20th-century Iraq. Innovative for its time, the forerunners of this musical trend were Jewish musicians, among them internationally acclaimed Ezra Aharon and Yusuf Zaarur. These musicians later immigrated to Israel, settled here and left their reputation behind. Recordings and archival materials from the estate of these musicians serve the artists as a starting point to dealing with situations of separation, diaspora and yearnings.
+        </p>
+        <div class="image-container">
+         <img src="../images/maqamat5.jpg" style="max-width:50%" alt="Maqamat Image 5">
+         </div>
+        <p>
+            Although they come from different disciplines, Zlekha Levy and Zinemanas share a similar technique: they sample old materials in order to charge them with a new meaning, while adding further layers and weaving them into a new narrative. The sounds enrich the landscape delineated in the gallery space with their complexity, while the visual images imbue the sounds with tangibility and form. The result is a dynamic, multi-layered work that draws an imagined environment around itself, a shade of memory from “there” through a perpetual movement “here.”
+        </p>
+        <p>
+            <b>Maqamat</b>, Arabic for “places,” articulates a unique symbiosis between the seen and the heard image, uniting them into one creation that expands beyond the boundaries of all the media that comprise it.
+        </p>
+        <div class="video-container">
+            <iframe src="https://player.vimeo.com/video/213513951" frameborder="0" allowfullscreen></iframe>
+            <iframe src="https://player.vimeo.com/video/213514545" frameborder="0" allowfullscreen></iframe>
+        </div>
     </div>
 </body>
 </html>
