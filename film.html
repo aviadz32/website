@@ -7,16 +7,22 @@
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
         
-        body {
+    body {
     font-family: 'Poppins', sans-serif;
     background-color: white;
     margin: 0;
     padding: 20px;
-    padding-top: 60px; /* Pushes content below the top bar */
+    padding-top: 80px; /* Adjust this based on the top bar height */
     display: flex;
     flex-direction: column;
     align-items: center;
     position: relative;
+    box-sizing: border-box;
+}
+
+.project:first-of-type {
+    margin-top: 20px; /* Ensures first project is pushed below the top bar */
+    padding-top: 20px;
 }
         .project {
             margin-top: 20px;
