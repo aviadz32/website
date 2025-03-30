@@ -11,61 +11,60 @@
             font-family: 'Poppins', sans-serif;
             background-color: white;
             margin: 0;
-            padding: 10px;
+            padding: 20px;
             display: flex;
             flex-direction: column;
             align-items: center;
         }
-
         .project {
             max-width: 80%;
             width: 100%;
             margin-bottom: 10px;
             text-align: justify;
         }
-
         .project img {
-            max-width: 100%;  /* Ensures image never overflows */
-            height: auto;  /* Maintains aspect ratio */
+            margin-top:20px;
+            width: 100%;
+            max-width: 600px;
+            max-height: 150px;
+            width: auto;
             border-radius: 5px;
-            display: block;
-            margin: 0 auto 20px auto;  /* Centers the image */
+             margin: 0 auto 20px auto; /* Center the image */
+    display: block; /* Ensures it is centered */
         }
-
         .project-title {
+
             font-size: 18px;
             font-weight: bold;
-            margin-top: 0;
+            margin-top: 10px;
+            align-items: center;
             text-align: center;
-        }
 
+
+        }
         .project p {
             font-size: 16px;
             color: #333;
             margin-top: 5px;
             padding: 0 10px;
         }
-
         .divider {
             width: 90%;
             height: 1px;
             background-color: #ccc;
             margin: 10px 0;
         }
-
+        
         @media (max-width: 768px) {
             body {
                 padding: 5px;
             }
-
             .project {
-                width: 95%;
+                padding: 0 5px;
             }
-
             .project-title {
                 font-size: 16px;
             }
-
             .project p {
                 font-size: 14px;
             }
@@ -73,15 +72,20 @@
     </style>
 </head>
 <body>
-
+    
     <div class="project">
         <img src="images/start.jpg" alt="Press Start">
         <div class="project-title">Sound Design & Original Music</div>
         <p><b>Press Start</b> is a six-part docu-series, each episode following a different story around the world of gaming. The series was aired on the Israeli public broadcaster digital channels and is available to watch on <a href="https://youtu.be/hDYPHbuPC1U?si=NillrFUlmPK9yFKb" target="_blank">YouTube.</a></p>
     </div>
     <div class="divider"></div>
-
+    
     <div class="project">
-        <img src="images/patrick.jpg" alt="Patrick">
+        <img src="images/patrick.jpg" alt="Project 2">
         <div class="project-title">Original Music</div>
-        <p><b>Patrick</
+        <p><b>Patrick</b> is a thriller TV show about Patrick, a crime boss who survives an assassination attempt but loses his memory. He wakes up with no knowledge of his previous life, trying to navigate the world of crime he was once part of. The music for the show was produced in collaboration with the composer <b>Shushan</b> and is available to stream on Channel 13's <a href="https://13tv.co.il/shows/patrick/season-01/episodes/" target="_blank">website.</a></p>
+    </div>
+    <div class="divider"></div>
+    
+</body>
+</html>
