@@ -37,7 +37,7 @@
         }
         .topbar {
             width: 100%;
-            height: 20px;
+            height: 50px;
             padding: 25px;
             font-size: 1.8rem;
             font-weight: bold;
@@ -53,16 +53,16 @@
         }
 
         
-        .submenu {
+       .submenu {
     display: flex;
     flex-direction: row;
     gap: 15px;
     justify-content: center;
     align-items: center;
-    padding: 10px;
+    padding: 10px 0; /* Adds padding for spacing */
     background-color: #ffffff;
     position: fixed;
-    top: 10px;
+    top: 40px; /* Ensures it appears below the top bar */
     width: 100%;
     text-align: center;
     z-index: 999;
@@ -89,7 +89,7 @@
 
 iframe {
     width: 100%;
-    height: calc(100vh - 140px); /* Leaves space for the social links */
+    height: calc(100vh - 100px); /* Leaves space for the social links */
     border: none;
 }
 
@@ -98,7 +98,7 @@ iframe {
     justify-content: center;
     align-items: center;
     gap: 0px;
-    padding: 10px;
+    padding: 0px;
     background-color: #ffffff;
     position: fixed;
     bottom: 0;
@@ -132,7 +132,7 @@ iframe {
             }
             .topbar {
                 font-size: 1.5rem;
-                padding: 5px;
+                padding: 0px;
                 justify-content: center; /* Ensures centering on mobile as well */
             }
         }
