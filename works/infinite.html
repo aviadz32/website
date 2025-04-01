@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Infinite</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: white;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .content {
+            max-width: 800px;
+            width: 100%;
+            text-align: justify;
+        }
+        .image-container, .video-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        .image-wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .image-container img {
+            max-width: 80%;
+            height: auto;
+            border-radius: 5px;
+        }
+        .image-caption {
+            text-align: center;
+            font-size: 14px;
+            color: #555;
+            margin-top: 5px;
+        }
+        .video-container iframe {
+            width: 100%;
+            max-width: 450px;
+            
+            margin-top: 10px; /* Reduce space above */
+            border-radius: 5px;
+        }
+        @media (max-width: 768px) {
+            .image-container img {
+                max-width: 100%;
+            }
+
+        }
+    </style>
+</head>
+<body>
+    <div class="content">
+        
+        <div class="image-container">
+            <img src="../images/infinite.jpg" alt="infiinte" style="max-width: 40%; border-radius: 70%;">
+        </div>
+        
+        <p>
+            <b>Hearing Colors</b> is a composition created for the Museum of Islamic and Near Eastern Cultures, as part of the group exhibition, Time and Again. <Br>The piece blends eastern musical elements with repetetive electronic music. Inspired by minimalist electronic music and contemporary American composers like Steve Reich and William Basinski, the work also draws influence from the innovations of Mohammed Abdel Wahab, who fused classical Western music with rich Arabic traditions.
+        </p>
+        <div class="image-container">
+            <div class="image-wrapper">
+                <img src="../images/infinite2.jpg" alt="infinite">
+                <div class="image-caption">The museum's courtyard</div>
+            </div>
+        </div>
+        <p>
+            Designed specifically for the museum's unique acoustics, Infinite interacts with the inner courtyard, which serves as a natural resonating chamber. As the composition gradually intensifies, it evokes themes of spirituality and circularity. Spreading through the museum lobby, the sound transforms the historical space, inviting visitors to engage through listening rather than sight, deepening their sensory experience of the exhibition.
+
+        </p>
+        
+        
+  
+    </div>
+    
+</body>
+</html>
