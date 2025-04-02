@@ -11,7 +11,6 @@
             font-family: 'Poppins', sans-serif;
             background-color: white;
             margin: 0;
-            margin-top: 20px;
             padding: 20px;
             display: flex;
             flex-direction: column;
@@ -38,6 +37,7 @@
             max-width: 80%;
             height: auto;
             border-radius: 5px;
+            cursor: pointer; /* Makes images clickable */
         }
         .image-caption {
             text-align: center;
@@ -46,60 +46,94 @@
             margin-top: 5px;
         }
         .video-container iframe {
-           
             width: 100%;
-            
-            margin-top: 10px; /* Reduce space above */
+            max-width: 350px;
+            margin-top: 10px;
             border-radius: 5px;
         }
-        @media (max-width: 768px) {
-            .image-container img {
-                max-width: 100%;
-            }
-
+        
+        /* Lightbox Styles */
+        @media (min-width: 768px) {
+        .lightbox {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 255);
+            display: none;
+            align-items: center;
+            justify-content: center;
+            z-index: 1000;
+        }
+        .lightbox img {
+            max-width: 90%;
+            max-height: 90%;
+            border-radius: 5px;
+        }
+        .lightbox-close {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            font-size: 30px;
+            color: black;
+            cursor: pointer;
         }
     </style>
 </head>
 <body>
     <div class="content">
-        
         <div class="image-container">
-            <img src="../images/maqamat2.jpg" alt="Maqamat Image 3">
+            <img src="../images/maqamat2.jpg" alt="Maqamat Image 3" class="expandable">
         </div>
         
         <p>
-            <b>Maqamat</b>, a work made in collaboration between visual artist Dor Zlekha Levy and musician Aviad Zinemanas, was born from their joint passion to reclaim the Arab music of early 20th-century Iraq. Innovative for its time, the forerunners of this musical trend were Jewish musicians, among them internationally acclaimed Ezra Aharon and Yusuf Zaarur. These musicians later immigrated to Israel, settled here and left their reputation behind. Recordings and archival materials from the estate of these musicians serve the artists as a starting point to dealing with situations of separation, diaspora and yearnings.
+            <b>Maqamat</b>, a work made in collaboration between visual artist Dor Zlekha Levy and musician Aviad Zinemanas...
         </p>
+        
         <div class="image-container">
             <div class="image-wrapper">
-                <img src="../images/maqamat5.jpg" alt="Maqamat Image 5" style="max-width:48% ;">
-                <div class="image-caption">The iraqi delegation at the Cairo Congress of Arab Music</div>
+                <img src="../images/maqamat5.jpg" alt="Maqamat Image 5" class="expandable">
+                <div class="image-caption">The Iraqi delegation at the Cairo Congress of Arab Music</div>
             </div>
         </div>
-        <p>
-            Although they come from different disciplines, Zlekha Levy and Zinemanas share a similar technique: they sample old materials in order to charge them with a new meaning, while adding further layers and weaving them into a new narrative. The sounds enrich the landscape delineated in the gallery space with their complexity, while the visual images imbue the sounds with tangibility and form. The result is a dynamic, multi-layered work that draws an imagined environment around itself, a shade of memory from “there” through a perpetual movement “here.”
-        </p>
-        <p>
-            <b>Maqamat</b>, Arabic for “places,” articulates a unique symbiosis between the seen and the heard image, uniting them into one creation that expands beyond the boundaries of all the media that comprise it.
-        </p>
-<div class="image-container">
+        
+        <div class="image-container">
             <div class="image-wrapper">
-                <img src="../images/maqamat1.jpg" alt="Maqamat Image 5" style="max-width:60% ;">
+                <img src="../images/maqamat1.jpg" alt="Maqamat Image 1" class="expandable">
                 <div class="image-caption">Maqamat at Tel-Aviv Museum of Art (2017)</div>
             </div>
         </div>
-        <p>
-            <b>Maqamat</b> was first displayed in the Tel-Aviv Muesum of art in 2017, curated by Tal Lanir and Hagit Emma Werner. 
-            since the it has been displyed at Artissima Torino in 2018.
-        </p>
-
-        <p>Eyal Sagui Bizawe has written a text about Maqamt - <a href="maqamat_text.html">"When Maqam is Reduced to a Place"</a></p>
-    <p><b>Video Excerpts:</b></a></p>
+        
+        <p><b>Video Excerpts:</b></p>
         <div class="video-container">
-            <iframe src="https://player.vimeo.com/video/213513951" frameborder="0" controls="true" allowfullscreen></iframe>
-            <iframe src="https://player.vimeo.com/video/213514545" frameborder="0" controls="true" allowfullscreen></iframe>
+            <iframe src="https://player.vimeo.com/video/213513951" frameborder="0" allowfullscreen></iframe>
+            <iframe src="https://player.vimeo.com/video/213514545" frameborder="0" allowfullscreen></iframe>
         </div>
     </div>
+
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox">
+        <span class="lightbox-close">&times;</span>
+        <img id="lightbox-img">
+    </div>
     
+    <script>
+        const lightbox = document.getElementById("lightbox");
+        const lightboxImg = document.getElementById("lightbox-img");
+        const closeButton = document.querySelector(".lightbox-close");
+        
+        document.querySelectorAll(".expandable").forEach(img => {
+            img.addEventListener("click", () => {
+                lightboxImg.src = img.src;
+                lightbox.style.display = "flex";
+            });
+        });
+        
+        closeButton.addEventListener("click", () => lightbox.style.display = "none");
+        lightbox.addEventListener("click", (e) => {
+            if (e.target !== lightboxImg) lightbox.style.display = "none";
+        });
+    </script>
 </body>
 </html>
