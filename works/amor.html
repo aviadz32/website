@@ -11,28 +11,37 @@
             font-family: 'Poppins', sans-serif;
             background-color: white;
             margin: 0;
-            margin-top: 20px;
             padding: 20px;
             display: flex;
-            flex-direction: column;
-            align-items: center;
+            justify-content: center;
         }
-        .content {
-            max-width: 800px;
+
+        .container {
+            display: flex;
+            max-width: 900px;
             width: 100%;
+        }
+
+        .text-content {
+            flex: 1;
+            padding-left: 0px;
             text-align: justify;
         }
-        .image-container {
+
+        .image-content {
+            flex: 2;
             display: flex;
             justify-content: center;
-            margin-bottom: 20px;
+            gap: 10px; /* Space between images */
         }
-        .image-container img {
-            max-height: 350px;
-            width: auto;
+
+        .image-content img {
+            max-width: 43%;
+            height: auto;
             border-radius: 5px;
             cursor: pointer;
         }
+
         .image-caption {
             text-align: center;
             font-size: 14px;
@@ -47,57 +56,72 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(255, 255, 255, 0.95); /* White overlay */
+            background: rgba(255, 255, 255, 0.95);
             display: none;
             align-items: center;
             justify-content: center;
             z-index: 9999;
         }
+
         .lightbox img {
             max-width: 90%;
             max-height: 90%;
             border-radius: 5px;
         }
+
         .lightbox-close {
             position: absolute;
             top: 20px;
             right: 30px;
             font-size: 30px;
-            color: black; /* Black close button */
+            color: black;
             cursor: pointer;
             font-weight: bold;
         }
 
-        /* Prevent lightbox effect on small screens */
+        /* Responsive layout for smaller screens */
         @media (max-width: 768px) {
-            .image-container img {
-                cursor: default; /* Remove pointer effect */
+            .container {
+                flex-direction: column;
+            }
+
+            .text-content {
+                order: 1;
+                padding-right: 0;
+                padding-bottom: 20px;
+            }
+
+            .image-content {
+                order: 2;
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .image-content img {
+                max-width: 100%;
             }
         }
     </style>
 </head>
 <body>
-    <div class="content">
-        <div class="image-container">
+    <div class="container">
+        <div class="image-content">
             <img src="../images/amor2.jpg" alt="Amor" class="expandable">
+            <img src="../images/amor3.jpg" alt="Amor" class="expandable">
         </div>
+        <div class="text-content">
+            <p>
+                <b>Amor</b> (2019) is an audiovisual composition made in collaboration with Artist Dor Zelkha Levy. Amor is the artists’ personal interpretation of the emotional state that is referred to in Portuguese as <b>Saudade</b>, a longing for an absent someone or something that one cares for and loves.
+            </p>
+            <p>
+                <b>Amor</b> was first displayed in 2019 at ROOM25, a contemporary art gallery in Tel Aviv. The work was accessible at all hours via code and allowed viewers a completely private experience. 
+            </p>
+            <p>
+                <a href="https://amor.watch/" target="_blank">Click here</a> to watch the mobile version of Amor.
+            </p>
+        </div>
+
         
-        <p>
-            <b>Amor</b> (2019) is an audiovisual composition made in collaboration with Artist Dor Zelkha Levy. Amor is the artists’ personal interpretation of the emotional state that is referred to in Portuguese as <b>Saudade</b>, a longing for an absent someone or something that one cares for and loves.
-        </p>
-
-        <div class="image-container">
-            <div>
-                <img src="../images/amor3.jpg" alt="Amor" class="expandable">
-                <div class="image-caption">Frame from Amor</div>
-            </div>
-        </div>
-
-        <p>
-            <b>Amor</b> was first displayed in 2019 at ROOM25, a contemporary art gallery in Tel Aviv. The work was accessible at all hours via code and allowed viewers a completely private experience. 
-            <br><br>
-            <a href="https://amor.watch/" target="_blank">Click here</a> to watch the mobile version of Amor.
-        </p>
     </div>
 
     <!-- Lightbox -->
@@ -114,13 +138,7 @@
 
             document.querySelectorAll(".expandable").forEach(img => {
                 img.addEventListener("click", () => {
-                    console.log("Image clicked!"); // Debugging log
-                    
-                    if (window.innerWidth <= 768) {
-                        console.log("Lightbox disabled on small screens.");
-                        return; // Stop function if on a small screen
-                    }
-                    
+                    if (window.innerWidth <= 768) return; // Disable on small screens
                     lightboxImg.src = img.src;
                     lightbox.style.display = "flex";
                 });
