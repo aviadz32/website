@@ -176,36 +176,53 @@
 
     </div>
 
-    <script>
-        document.querySelectorAll(".gallery-item").forEach(item => {
-            item.addEventListener("click", function() {
-                if (this.classList.contains("played")) return;
-                this.classList.add("played");
+   <script>
+    let currentIframe = null; // Track the currently playing iframe
 
-                var imgElement = this.querySelector('img');
-                var overlayElement = this.querySelector('.overlay');
-                var mediaType = this.getAttribute("data-type");
-                var mediaURL = this.getAttribute("data-url");
+    document.querySelectorAll(".gallery-item").forEach(item => {
+        item.addEventListener("click", function () {
+            // If this item is already playing, do nothing
+            if (this.classList.contains("played")) return;
 
-                imgElement.style.display = 'none';
-                overlayElement.style.opacity = '0';
+            // Stop previous iframe if exists
+            if (currentIframe) {
+                const parent = currentIframe.parentElement;
+                parent.classList.remove("played");
+                parent.querySelector('img').style.display = 'block';
+                parent.querySelector('.overlay').style.opacity = '1';
+                currentIframe.remove();
+                currentIframe = null;
+            }
 
-                var iframe = document.createElement('iframe');
-                iframe.src = mediaURL;
-                iframe.frameBorder = 0;
-                iframe.allow = "autoplay; encrypted-media"; 
-                iframe.classList.add('media-player');
+            // Add "played" state to this item
+            this.classList.add("played");
 
-                iframe.style.position = "absolute";
-                iframe.style.top = "0";
-                iframe.style.left = "0";
-                iframe.style.width = "100%";
-                iframe.style.height = "100%";
-                iframe.style.borderRadius = "5px";
+            const imgElement = this.querySelector('img');
+            const overlayElement = this.querySelector('.overlay');
+            const mediaType = this.getAttribute("data-type");
+            const mediaURL = this.getAttribute("data-url");
 
-                this.appendChild(iframe);
-            });
+            imgElement.style.display = 'none';
+            overlayElement.style.opacity = '0';
+
+            const iframe = document.createElement('iframe');
+            iframe.src = mediaURL;
+            iframe.frameBorder = 0;
+            iframe.allow = "autoplay; encrypted-media";
+            iframe.classList.add('media-player');
+
+            iframe.style.position = "absolute";
+            iframe.style.top = "0";
+            iframe.style.left = "0";
+            iframe.style.width = "100%";
+            iframe.style.height = "100%";
+            iframe.style.borderRadius = "5px";
+
+            this.appendChild(iframe);
+            currentIframe = iframe; // Set current playing iframe
         });
-    </script>
+    });
+</script>
+
 </body>
 </html>
