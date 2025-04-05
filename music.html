@@ -176,7 +176,7 @@
 
     </div>
 
-   <script>
+  <script>
     let currentIframe = null; // Track the currently playing iframe
 
     document.querySelectorAll(".gallery-item").forEach(item => {
@@ -189,7 +189,7 @@
                 const parent = currentIframe.parentElement;
                 parent.classList.remove("played");
                 parent.querySelector('img').style.display = 'block';
-                parent.querySelector('.overlay').style.opacity = '1';
+                parent.querySelector('.overlay').style.display = 'block'; // Ensure overlay is shown again
                 currentIframe.remove();
                 currentIframe = null;
             }
@@ -199,11 +199,10 @@
 
             const imgElement = this.querySelector('img');
             const overlayElement = this.querySelector('.overlay');
-            const mediaType = this.getAttribute("data-type");
             const mediaURL = this.getAttribute("data-url");
 
             imgElement.style.display = 'none';
-            overlayElement.style.opacity = '0';
+            overlayElement.style.display = 'none'; // Hide overlay completely
 
             const iframe = document.createElement('iframe');
             iframe.src = mediaURL;
@@ -223,6 +222,7 @@
         });
     });
 </script>
+
 
 </body>
 </html>
