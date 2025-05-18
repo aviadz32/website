@@ -140,7 +140,14 @@
         </div>
     </div>
     <div class="content-container">
-        <iframe name="content-frame" src="works.html"></iframe>
+       <iframe name="content-frame" id="content-frame" src="" frameborder="0"></iframe>
+
+<script>
+  // Get page from ?page=... query string
+  const params = new URLSearchParams(window.location.search);
+  const page = params.get("page") || "works.html"; // default page
+  document.getElementById("content-frame").src = page;
+</script>
     </div>
 </body>
 </html>
