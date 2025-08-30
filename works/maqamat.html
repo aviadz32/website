@@ -35,10 +35,21 @@
             align-items: center;
         }
         .image-container img {
+              width: 100%;         /* Make it responsive */
+        height: auto;
+        border-radius: 5px;
+    }
+
+    /* Desktop-specific sizes */
+    @media (min-width: 768px) {
+        .img-48 {
+            max-width: 48%;
+        }
+        .img-60 {
+            max-width: 60%;
+        }
+        .img-80 {
             max-width: 80%;
-            height: auto;
-            border-radius: 5px;
-            cursor: pointer; /* Makes images clickable */
         }
         .image-caption {
             text-align: center;
@@ -97,7 +108,7 @@
         </p>
         <div class="image-container">
             <div class="image-wrapper">
-                <img src="../images/maqamat5.jpg" alt="Maqamat Image 5" class="expandable" style="max-width:48% ;">
+                <img src="../images/maqamat5.jpg" alt="Maqamat Image 5"  class="expandable img-48" ;">
                 <div class="image-caption">The iraqi delegation at the Cairo Congress of Arab Music</div>
             </div>
         </div>
@@ -109,7 +120,7 @@
         </p>
 <div class="image-container">
             <div class="image-wrapper">
-                <img src="../images/maqamat1.jpg" alt="Maqamat Image 5" class="expandable" style="max-width:60% ;">
+                <img src="../images/maqamat1.jpg" alt="Maqamat Image 5"  class="expandable img-60" ;">
                 <div class="image-caption">Maqamat at Tel-Aviv Museum of Art (2017)</div>
             </div>
         </div>
