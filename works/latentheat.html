@@ -46,11 +46,13 @@
     }
 
     .top-image {
-        
-        max-width: 500px;
-        height: auto;
-        border-radius: 5px;
-    }
+    width: 100%;       /* scale to the width of the content */
+    max-width: 500px;  /* don’t exceed this on large screens */
+    height: auto;
+    border-radius: 5px;
+    display: block;
+    margin: 0 auto;    /* center it nicely */
+}
 
     .image-caption {
         text-align: center;
