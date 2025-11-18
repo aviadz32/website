@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Production</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: white;
+            margin-top: 20px;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+            max-width: 1000px;
+            width: 100%;
+            justify-content: center;
+            align-items: center;
+        }
+        .gallery a {
+            display: block;
+            text-decoration: none;
+            position: relative;
+            overflow: hidden;
+            border-radius: 5px;
+            width: 100%;
+            padding-top: 100%; /* Maintain square aspect ratio */
+        }
+        .gallery img, .media-player {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+     .overlay {
+        position: absolute;
+        inset: 0; /* shorthand for top:0; right:0; bottom:0; left:0 */
+        background: rgba(0, 0, 0, 0.55);
+        color: white;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        opacity: 0;
+        transition: opacity 0.3s ease-in-out;
+        border-radius: 5px;
+        line-height: 1.3;
+        padding: 0; /* remove internal padding that offset centering */
+    }
+
+    .gallery a:hover .overlay {
+        opacity: 1;
+    }
+
+    .overlay-title {
+        font-size: 16px;
+        font-weight: 600;
+        letter-spacing: 0.3px;
+        margin: 0 0 4px 0;
+    }
+
+    .overlay-type {
+        font-size: 13px;
+        font-weight: 400;
+        color: #ddd;
+        letter-spacing: 0.2px;
+    }
+
+    </style>
+</head>
+<body>
+    <div class="gallery">
+        <a href="javascript:void(0);" 
+            class="gallery-item" 
+            data-type="bandcamp"
+            data-url="https://bandcamp.com/EmbeddedPlayer/album=1847207223/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/transparent=true/">
+             <img src="images/satellites.jpg" alt="Satellites">
+             <div class="overlay">
+                 <div class="overlay-title">Şatellites - Şatellites</div>
+                 <div class="overlay-type">Mastering</div>
+             </div>
+        </a>
+
+        <a href="javascript:void(0);" 
+            class="gallery-item" 
+            data-type="bandcamp"
+            data-url="https://bandcamp.com/EmbeddedPlayer/album=2957810157/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/transparent=true/">
+            <img src="images/ejeeje.jpg" alt="Eje Eje">
+            <div class="overlay">
+                <div class="overlay-title">Eje Eje - Five Seasons</div>
+                <div class="overlay-type">Mixing & Mastering</div>
+            </div>
+        </a>
+
+        <a href="javascript:void(0);" 
+            class="gallery-item" 
+            data-type="bandcamp"
+            data-url="https://bandcamp.com/EmbeddedPlayer/album=1986311040/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/transparent=true/">
+            <img src="images/Daniella.jpg" alt="Daniella">
+            <div class="overlay">
+                <div class="overlay-title">Daniella Tourgeman - Daydream</div>
+                <div class="overlay-type">Mastering</div>
+            </div>
+        </a>
+
+        
+        <a href="javascript:void(0);" 
+            class="gallery-item" 
+            data-type="bandcamp"
+            data-url="https://bandcamp.com/EmbeddedPlayer/album=1274386915/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/transparent=true/">
+            <img src="images/zoe2.jpg" alt="Loveloops">
+            <div class="overlay">
+                <div class="overlay-title">Zoe Polanski – Loveloops</div>
+                <div class="overlay-type">Mixing</div>
+            </div>
+        </a>
+        
+        <a href="javascript:void(0);" 
+            class="gallery-item" 
+            data-type="bandcamp"
+            data-url="https://bandcamp.com/EmbeddedPlayer/album=1369812522/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/transparent=true/">
+            <img src="images/zoe.jpg" alt="Violent Flowers">
+            <div class="overlay">
+                <div class="overlay-title">Zoe Polanski – Violent Flowers</div>
+                <div class="overlay-type">Mixing</div>
+            </div>
+        </a>
+
+        <a href="javascript:void(0);" 
+            class="gallery-item" 
+            data-type="bandcamp"
+            data-url="https://bandcamp.com/EmbeddedPlayer/album=1427045699/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/transparent=true/">
+            <img src="images/minidv.jpg" alt="Mini DV">
+            <div class="overlay">
+                <div class="overlay-title">Zoe Polanski – Mini DV (Original Soundtrack)</div>
+                <div class="overlay-type">Mixing & Mastering</div>
+            </div>
+        </a>
+
+        <a href="javascript:void(0);" 
+            class="gallery-item" 
+            data-type="bandcamp"
+            data-url="https://bandcamp.com/EmbeddedPlayer/album=435734550/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/transparent=true/">
+            <img src="images/faint.jpg" alt="Faintings">
+            <div class="overlay">
+                <div class="overlay-title">Zoe Polanski & Nina Traub – Faintings</div>
+                <div class="overlay-type">Mastering</div>
+            </div>
+        </a>
+
+<a href="javascript:void(0);" 
+            class="gallery-item" 
+            data-type="youtube"
+            data-url="https://www.youtube.com/embed/_VTx57zMYOY?autoplay=1">
+            <img src="images/dark.jpg" alt="Dark Matter">
+            <div class="overlay"> <div class="overlay-title">Dark Matter - Hakol Shakuf</div>
+              <div class="overlay-type">Mixing & Mastering</div> </div>
+        </a>
+
+        <a href="javascript:void(0);" 
+            class="gallery-item" 
+            data-type="bandcamp"
+            data-url="https://bandcamp.com/EmbeddedPlayer/album=2575615153/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/transparent=true/">
+            <img src="images/Leviot.jpg" alt="Leviot">
+            <div class="overlay">
+                <div class="overlay-title">Leviot - Sharav</div>
+                <div class="overlay-type">Mixing</div>
+            </div>
+        </a>
+
+        <a href="javascript:void(0);" 
+            class="gallery-item" 
+            data-type="bandcamp"
+            data-url="https://bandcamp.com/EmbeddedPlayer/album=3333533865/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/transparent=true/">
+            <img src="images/yael.jpg" alt="Yael">
+            <div class="overlay">
+                <div class="overlay-title">Yaelllavie - {*}</div>
+                <div class="overlay-type">Mixing</div>
+            </div>
+        </a>
+
+
+        <a href="javascript:void(0);" 
+            class="gallery-item" 
+            data-type="bandcamp"
+            data-url="https://bandcamp.com/EmbeddedPlayer/album=2201312526/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/transparent=true/">
+            <img src="images/ohad.jpg" alt="Ohad">
+            <div class="overlay"> <div class="overlay-title">Ohad Peleg - N.SOF</div>
+                <div class="overlay-type">Mixing & Mastering</div>
+            </div> </a>
+
+        <a href="javascript:void(0);" 
+            class="gallery-item" 
+            data-type="bandcamp"
+            data-url="https://bandcamp.com/EmbeddedPlayer/album=1027383854/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/track=2483430218/transparent=true/autoplay=1">
+            <img src="images/omek.jpg" alt="Omek HaAruba">
+            <div class="overlay"> <div class="overlay-title">Omek HaAruba - Omek HaAruba</div>
+                <div class="overlay-type">Mastering</div>
+            </div> </a>
+
+        <a href="javascript:void(0);" 
+            class="gallery-item" 
+            data-type="bandcamp"
+            data-url="https://bandcamp.com/EmbeddedPlayer/album=2762809436/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/track=2483430218/transparent=true/autoplay=1">
+            <img src="images/omek2.jpg" alt="Omek HaAruba">
+            <div class="overlay"> <div class="overlay-title">Omek HaAruba - Omek HaAruba</div>
+                <div class="overlay-type">Mastering</div>
+            </div> </a>
+
+        <a href="javascript:void(0);" 
+            class="gallery-item" 
+            data-type="youtube"
+            data-url="https://www.youtube.com/embed/7ZXSwDx48Rc?autoplay=1">
+            <img src="images/notime.jpg" alt="Yehezkel Raz - Chronology Of No Time Remix">
+            <div class="overlay"> <div class="overlay-title">Yehezkel Raz - Chronology Of No Time Remix</div>
+                <div class="overlay-type">Mixing</div>
+            </div> </a>
+
+
+        <a href="javascript:void(0);" 
+    class="gallery-item" 
+            data-type="youtube"
+            data-url="https://www.youtube.com/embed/7ZXSwDx48Rc?autoplay=1">
+    <img src="images/rujum.jpg" alt="Rujum">
+    <div class="overlay"> 
+        <div class="overlay-title">Rujum - New Spotify Track</div> 
+        <div class="overlay-type">Mastering</div>
+    </div> 
+</a>
+
+        <a href="javascript:void(0);" 
+            class="gallery-item" 
+            data-type="youtube"
+            data-url="https://www.youtube.com/embed/6Kl7kAAYB0k?autoplay=1">
+            <img src="images/wills.jpg" alt="Joove - Wills">
+            <div class="overlay"> <div class="overlay-title">Joove - Wills</div>
+              <div class="overlay-type">Mixing & Mastering</div> </div>
+        </a>
+        <a href="javascript:void(0);" 
+            class="gallery-item" 
+            data-type="bandcamp"
+            data-url="https://bandcamp.com/EmbeddedPlayer/album=1300536469/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/transparent=true/">
+            <img src="images/howto.jpg" alt="Joove - How To Let Things Go">
+            <div class="overlay"> <div class="overlay-title">Joove - How To Let Things Go</div>
+                
+                <div class="overlay-type">Mixing</div></div>
+        </a>
+
+        <a href="javascript:void(0);" 
+            class="gallery-item" 
+            data-type="bandcamp"
+            data-url="https://bandcamp.com/EmbeddedPlayer/album=1598138941/size=large/bgcol=ffffff/linkcol=0687f5/tracklist=false/transparent=true/">
+            <img src="images/unlock.jpg" alt="Joove - Unlock & Good Luck">
+            <div class="overlay"> <div class="overlay-title">Joove - Unlock & Good Luck</div>
+               
+                <div class="overlay-type">Mixing</div></div>
+        </a>
+      
+
+    </div>
+
+  <script>
+    let currentIframe = null; // Track the currently playing iframe
+
+    document.querySelectorAll(".gallery-item").forEach(item => {
+        item.addEventListener("click", function () {
+            // If this item is already playing, do nothing
+            if (this.classList.contains("played")) return;
+
+            // Stop previous iframe if exists
+            if (currentIframe) {
+                const parent = currentIframe.parentElement;
+                parent.classList.remove("played");
+                parent.querySelector('img').style.display = 'block';
+                // Make sure to find the .overlay before setting its display
+                const previousOverlay = parent.querySelector('.overlay');
+                if (previousOverlay) {
+                    previousOverlay.style.display = 'flex'; // Ensure overlay is shown again (using 'flex' as its display property)
+                }
+                currentIframe.remove();
+                currentIframe = null;
+            }
+
+            // Add "played" state to this item
+            this.classList.add("played");
+
+            const imgElement = this.querySelector('img');
+            const overlayElement = this.querySelector('.overlay');
+            const mediaURL = this.getAttribute("data-url");
+
+            imgElement.style.display = 'none';
+            // Only try to hide the overlay if it exists
+            if (overlayElement) {
+                overlayElement.style.display = 'none'; // Hide overlay completely
+            }
+
+            const iframe = document.createElement('iframe');
+            iframe.src = mediaURL;
+            iframe.frameBorder = 0;
+            iframe.allow = "autoplay; encrypted-media";
+            iframe.classList.add('media-player');
+
+            iframe.style.position = "absolute";
+            iframe.style.top = "0";
+            iframe.style.left = "0";
+            iframe.style.width = "100%";
+            iframe.style.height = "100%";
+            iframe.style.borderRadius = "5px";
+
+            this.appendChild(iframe);
+            currentIframe = iframe; // Set current playing iframe
+        });
+    });
+</script>
+
+
+</body>
+</html>
