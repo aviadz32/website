@@ -9,7 +9,7 @@
         
         body {
             font-family: 'Poppins', sans-serif;
-            margin-top: 20px; /* Matches the height of the top bar */
+            margin-top: 20px;
             background-color: white;
             margin: 0;
             padding: 20px;
@@ -18,48 +18,95 @@
             align-items: center;
             position: relative;
         }
-        h1 {
-            font-size: 2.5rem; /* Increased font size */
-            margin-bottom: 5px; /* Reduce space below the header */
+
+        a {
+            color: black; /* Make links black */
+            text-decoration: underline;
         }
-    
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 5px;
+        }
         
         .bio {
             margin-top: 40px;
             max-width: 800px;
             text-align: justify;
         }
-        
+
         .bio img {
-    width: 250px; /* Set a fixed width */
-    height: 250px; /* Set a fixed height */
-    object-fit: cover; /* Maintain aspect ratio */
-    border-radius: 50%; /* Optional: make it circular */
-    margin: 0 auto 20px auto; /* Center the image */
-    display: block; /* Ensures it is centered */
-}
-        
+            width: 250px;
+            height: 250px;
+            object-fit: cover;
+            border-radius: 50%;
+            margin: 0 auto 20px auto;
+            display: block;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: white;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            height: 50px;
+            gap: 0;
+        }
+
+        .social-links a {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-decoration: none;
+            color: black;
+            font-size: 24px;
+            width: 30px;
+            height: 40px;
+        }
+
+        /* wrapper to control desktop width of Mixcloud embed */
+        .mixcloud-wrapper {
+            width: 100%;
+            max-width: 800px; /* matches bio text width */
+        }
+
+        iframe {
+            width: 100%;
+            border: none;
+        }
+
     </style>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/js/all.min.js" crossorigin="anonymous"></script>
 </head>
 <body>
   
-    <!-- Add image above the text paragraph -->
     <div id="bio" class="bio">
         <img src="images/dj.jpg" alt="Aviad Zinemanas">
-        <p><br><b>Aviad Zinemanas</b> is a vinyl-driven DJ whose sets travel across continents. Known for weaving global rhythms into a seamless musical narrative, he blends everything from Colombian cumbia and Japanese city pop to Obscure disco, other rare international cuts found thourgh his travels. His selections balance deep-crate discoveries with dance-floor intuition. 
+        
+        <p><br><b>Aviad Zinemanas</b> is a vinyl-driven DJ whose sets travel across continents. Known for weaving global rhythms into a seamless musical narrative, he blends everything from Colombian cumbia and Japanese city pop to Obscure disco, other rare international cuts found thourgh his travels. His selections balance deep-crate discoveries with dance-floor intuition.</p>
 
-<br> <br>Drawing from years of experience as a musician and producer, Aviad approaches every set with an ear for mood and texture. His background in composition adds a cinematic quality to his mixes, allowing him to move fluidly between genres while maintaining a distinctive sonic identity.</p>
+        <p>Drawing from years of experience as a musician and producer, Aviad approaches every set with an ear for mood and texture. His background in composition adds a cinematic quality to his mixes, allowing him to move fluidly between genres while maintaining a distinctive sonic identity.</p>
 
-<p>
-      <a href=https://drive.google.com/drive/folders/1hvfdvWmgknBOyTx9rgZjTpHaVfSlwDO4?usp=drive_link>PR Pictures</a>
+        <p>
+            <a href="https://drive.google.com/drive/folders/1hvfdvWmgknBOyTx9rgZjTpHaVfSlwDO4?usp=drive_link">PR Pictures</a>
+        </p>
 
-    </p>
-    
-<P><b> Example Set:</b> </P>
+        <p><b>Example Set:</b></p>
     </div>
-    <iframe width="80%" height="120" src="https://player-widget.mixcloud.com/widget/iframe/?hide_cover=1&feed=%2Faviad-zinemanas%2Fver%25C3%25A3o%2F" frameborder="0" allow="encrypted-media; fullscreen; autoplay; idle-detection; speaker-selection; web-share;" ></iframe>
 
-    
+    <div class="mixcloud-wrapper">
+        <iframe height="400" src="https://player-widget.mixcloud.com/widget/iframe/?light=1&autoplay=1&feed=%2Faviad-zinemanas%2Fver%25C3%25A3o%2F" allow="encrypted-media; fullscreen; autoplay; idle-detection; speaker-selection; web-share;"></iframe><br><br>
+    </div>
+<!-- SOCIAL -->
+    <div class="social-links">
+        <a href="https://www.instagram.com/aviad.zinemanas/" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://www.youtube.com/@AviadZinemanas" target="_blank"><i class="fab fa-youtube"></i></a>
+        <a href="https://soundcloud.com/aviad" target="_blank"><i class="fab fa-soundcloud"></i></a>
+        <a href="https://aviad.bandcamp.com" target="_blank"><i class="fab fa-bandcamp"></i></a>
+        <a href="https://open.spotify.com/artist/6BhCcNhioIJmU7LUEL5C0j?si=3K0lznEZSqSwqZMv8Yqr8g" target="_blank"><i class="fab fa-spotify"></i></a>
+    </div>
 </body>
 </html>
