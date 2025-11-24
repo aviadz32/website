@@ -7,150 +7,150 @@
     <meta name="keywords" content="Aviad Zinemanas, music production, film scoring, TV projects, sound design">
     <meta name="author" content="Aviad Zinemanas">
 
-     <!-- Open Graph (Facebook, LinkedIn) -->
+    <!-- Open Graph -->
     <meta property="og:title" content="Aviad Zinemanas">
     <meta property="og:description" content="Explore the work of Aviad Zinemanas in music production and film/TV scoring.">
     <meta property="og:image" content="https://aviadzinemanas.com/images/bio.jpg">
     <meta property="og:url" content="https://aviadzinemanas.com">
     <meta property="og:type" content="website">
 
-    <!-- Twitter Card -->
+    <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="Aviad Zinemanas">
     <meta name="twitter:description" content="Explore the work of Aviad Zinemanas in music production and film/TV scoring.">
     <meta name="twitter:image" content="https://aviadzinemanas.com/images/bio.jpg">
+
     <title>Aviad Zinemanas</title>
     <link rel="icon" type="images/x-icon" href="images/lightdark.ico">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" />
 
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
-        
+
         body {
             font-family: 'Poppins', sans-serif;
             background-color: white;
             margin: 0;
             padding: 0;
+            height: 100vh;
             display: flex;
             flex-direction: column;
-            height: 100vh;
         }
-        .topbar {
-            width: 100%;
-            height: 50px;
-            padding: 25px;
-            font-size: 1.8rem;
-            font-weight: bold;
+
+        /* ───────── HEADER (TOPBAR + SUBMENU) ───────── */
+
+        .header-wrapper {
             position: fixed;
             top: 0;
             left: 0;
-            right: 0;
-            display: flex;
-            align-items: center;
-            justify-content: center; /* Centered text */
+            width: 100%;
             z-index: 1000;
-            background-color: #ffffff;
+            background: white;
         }
 
-        
-       .submenu {
-    display: flex;
-    flex-direction: row;
-    gap: 15px;
-    justify-content: center;
-    align-items: center;
-    padding: 10px 0; /* Adds padding for spacing */
-    background-color: #ffffff;
-    position: fixed;
-    top: 30px; /* Ensures it appears below the top bar */
-    width: 100%;
-    text-align: center;
-    z-index: 999;
-}
+        .topbar {
+            height: 50px;
+            font-size: 1rem;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
 
-.submenu a {
-    text-decoration: none;
-    color: black;
-    font-weight: 500;
-    font-size: 1rem;
-    text-align: center;  /* Ensures text centering */
-}
-   .content-container {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-    min-height: calc(100vh - 100px); /* Ensures the content fits */
-    position: relative;
-    padding-top: 50px;
-    padding-bottom: 60px; /* Prevents social links from overlapping content */
-}
+        .submenu {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 10px;
+            padding: 0px 0;
+        }
 
-iframe {
-    width: 100%;
-    height: calc(100vh - 100px); /* Leaves space for the social links */
-    border: none;
-}
+        .submenu a {
+            text-decoration: none;
+            color: black;
+            font-weight: 500;
+            font-size: 1.5rem;
+        }
 
-.social-links {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 0px;
-    padding: 0px;
-    background-color: #ffffff;
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    text-align: center;
-    height: 50px; /* Ensure fixed height */
-}
+        /* ───────── CONTENT AREA ───────── */
 
-.social-links a {
-    display: flex; /* Ensures proper centering of the icons */
-    justify-content: center;
-    align-items: center;
-    text-decoration: none;
-    color: black;
-    font-size: 24px;
-    width: 30px; /* Ensures uniform spacing */
-    height: 40px;
-}
+        .content-container {
+            width: 100%;
+            flex: 1;
+            position: relative;
+            padding-bottom: 60px;
+            margin-top: calc(var(--header-height) - 12px);
+        }
+
+        iframe {
+            width: 100%;
+            height: calc(100vh - var(--header-height) - 60px + 12px);
+
+            border: none;
+        }
+
+        /* ───────── SOCIAL LINKS ───────── */
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: white;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            height: 50px;
+            gap: 0;
+        }
+
+        .social-links a {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-decoration: none;
+            color: black;
+            font-size: 24px;
+            width: 30px;
+            height: 40px;
+        }
+
+        /* ───────── MOBILE ───────── */
+
         @media (max-width: 768px) {
-            .submenu {
-                flex-wrap: wrap;
-                gap: 5px;
+            .topbar {
+                font-size: 1.5rem;
+                padding: 0;
             }
-            .content-container iframe {
-        margin-top: 0 !important; 
-        
-    }
+
             .submenu a {
                 font-size: 0.9rem;
                 padding: 5px;
-            }
-            .topbar {
-                font-size: 1.5rem;
-                padding: 0px;
-                justify-content: center; /* Ensures centering on mobile as well */
             }
         }
     </style>
 </head>
 <body>
-    <div class="topbar">Aviad Zinemanas</div>
-    <div class="submenu">
-        <a href="works.html" target="content-frame">Works</a>
-        <a href="music.html" target="content-frame">Music Production</a>
-        <a href="mixing.html" target="content-frame">Mixing & Mastering</a>
-        <a href="film.html" target="content-frame">Film/TV</a>
-        <a href="bio.html" target="content-frame">Bio</a>
-        <a href="contact.html" target="content-frame">Contact</a>
+
+    <!-- HEADER -->
+    <div class="header-wrapper">
+        <div class="topbar">Aviad Zinemanas</div>
+
+        <div class="submenu">
+            <a href="works.html" target="content-frame">Works</a>
+            <a href="music.html" target="content-frame">Music Production</a>
+            <a href="mixing.html" target="content-frame">Mixing & Mastering</a>
+            <a href="film.html" target="content-frame">Film/TV</a>
+            <a href="bio.html" target="content-frame">Bio</a>
+            <a href="contact.html" target="content-frame">Contact</a>
+        </div>
     </div>
+
+    <!-- CONTENT -->
     <div class="content-container">
         <iframe name="content-frame" src="works.html"></iframe>
     </div>
+
+    <!-- SOCIAL -->
     <div class="social-links">
         <a href="https://www.instagram.com/aviad.zinemanas/" target="_blank"><i class="fab fa-instagram"></i></a>
         <a href="https://www.youtube.com/@AviadZinemanas" target="_blank"><i class="fab fa-youtube"></i></a>
@@ -158,5 +158,19 @@ iframe {
         <a href="https://aviad.bandcamp.com" target="_blank"><i class="fab fa-bandcamp"></i></a>
         <a href="https://open.spotify.com/artist/6BhCcNhioIJmU7LUEL5C0j?si=3K0lznEZSqSwqZMv8Yqr8g" target="_blank"><i class="fab fa-spotify"></i></a>
     </div>
+
+
+    <!-- AUTO HEADER HEIGHT CALCULATOR -->
+    <script>
+        function updateHeaderHeight() {
+            const header = document.querySelector('.header-wrapper');
+            const height = header.offsetHeight + 'px';
+            document.documentElement.style.setProperty('--header-height', height);
+        }
+
+        window.addEventListener('load', updateHeaderHeight);
+        window.addEventListener('resize', updateHeaderHeight);
+    </script>
+
 </body>
 </html>
