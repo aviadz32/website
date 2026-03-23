@@ -90,12 +90,34 @@
     font-size: 14px;
     border-radius: 6px;
 }
+#langSwitcher {
+    position: fixed;
+    top: 15px;
+    right: 15px;
+    font-size: 14px;
+}
 
+#langSwitcher button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-weight: 400;
+    padding: 2px 4px;
+}
+
+#langSwitcher button.active {
+    font-weight: 600;
+    text-decoration: underline;
+}
     </style>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/js/all.min.js" crossorigin="anonymous"></script>
 </head>
 <body>
-  <button id="langToggle">PT</button>
+  <div id="langSwitcher">
+    <button id="btnEN">EN</button>
+    <span>|</span>
+    <button id="btnPT">PT</button>
+</div>
     <div id="bio" class="bio">
         <img src="images/dj.jpg" alt="Aviad Zinemanas">
         
@@ -150,35 +172,50 @@ let currentLang = "en";
 function setLanguage(lang) {
     const en = document.querySelectorAll(".en");
     const pt = document.querySelectorAll(".pt");
-    const button = document.getElementById("langToggle");
+
+    const btnEN = document.getElementById("btnEN");
+    const btnPT = document.getElementById("btnPT");
 
     if (lang === "pt") {
         en.forEach(el => el.style.display = "none");
         pt.forEach(el => el.style.display = "inline");
-        button.innerText = "EN";
+
+        btnPT.classList.add("active");
+        btnEN.classList.remove("active");
+
         currentLang = "pt";
     } else {
         en.forEach(el => el.style.display = "inline");
         pt.forEach(el => el.style.display = "none");
-        button.innerText = "PT";
+
+        btnEN.classList.add("active");
+        btnPT.classList.remove("active");
+
         currentLang = "en";
     }
+
+    localStorage.setItem("lang", lang);
 }
 
-// Detect browser language on load
+// Load language
 document.addEventListener("DOMContentLoaded", () => {
-    const browserLang = navigator.language || navigator.userLanguage;
+    const savedLang = localStorage.getItem("lang");
 
-    if (browserLang.toLowerCase().startsWith("pt")) {
-        setLanguage("pt");
+    if (savedLang) {
+        setLanguage(savedLang);
     } else {
-        setLanguage("en");
+        const browserLang = navigator.language || navigator.userLanguage;
+        setLanguage(browserLang.toLowerCase().startsWith("pt") ? "pt" : "en");
     }
 });
 
-// Toggle on button click
-document.getElementById("langToggle").addEventListener("click", () => {
-    setLanguage(currentLang === "en" ? "pt" : "en");
+// Button clicks
+document.getElementById("btnEN").addEventListener("click", () => {
+    setLanguage("en");
+});
+
+document.getElementById("btnPT").addEventListener("click", () => {
+    setLanguage("pt");
 });
 </script>
 </body>
