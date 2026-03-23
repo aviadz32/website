@@ -78,24 +78,58 @@
             width: 100%;
             border: none;
         }
+        #langToggle {
+    position: fixed;
+    top: 15px;
+    right: 15px;
+    background: black;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    cursor: pointer;
+    font-size: 14px;
+    border-radius: 6px;
+}
 
     </style>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/js/all.min.js" crossorigin="anonymous"></script>
 </head>
 <body>
-  
+  <button id="langToggle">PT</button>
     <div id="bio" class="bio">
         <img src="images/dj.jpg" alt="Aviad Zinemanas">
         
-        <p><br><b>Aviad Zinemanas</b> is a vinyl-driven DJ whose sets travel across continents. Known for weaving global rhythms into a seamless musical narrative, he blends everything from Colombian cumbia and Japanese city pop to Obscure disco, other rare international cuts found thourgh his travels. His selections balance deep-crate discoveries with dance-floor intuition.</p>
+       <p>
+    <span class="en">
+        <br><b>Aviad Zinemanas</b> is a vinyl-driven DJ whose sets travel across continents...
+    </span>
+    <span class="pt" style="display:none;">
+        <br><b>Aviad Zinemanas</b> é um DJ focado em vinil cujos sets viajam por continentes...
+    </span>
+</p>
 
-        <p>Drawing from years of experience as a musician and producer, Aviad approaches every set with an ear for mood and texture. His background in composition adds a cinematic quality to his mixes, allowing him to move fluidly between genres while maintaining a distinctive sonic identity.</p>
+<p>
+    <span class="en">
+        Drawing from years of experience as a musician and producer...
+    </span>
+    <span class="pt" style="display:none;">
+        Com anos de experiência como músico e produtor...
+    </span>
+</p>
 
-        <p>
-            <a href="https://drive.google.com/drive/folders/1hvfdvWmgknBOyTx9rgZjTpHaVfSlwDO4?usp=drive_link">PR Pictures</a>
-        </p>
+<p>
+    <a href="https://drive.google.com/...">
+        <span class="en">PR Pictures</span>
+        <span class="pt" style="display:none;">Fotos para imprensa</span>
+    </a>
+</p>
 
-        <p><b>Example Set:</b></p>
+<p>
+    <b>
+        <span class="en">Example Set:</span>
+        <span class="pt" style="display:none;">Set de exemplo:</span>
+    </b>
+</p>
     </div>
 
     <div class="mixcloud-wrapper">
@@ -109,5 +143,43 @@
         <a href="https://aviad.bandcamp.com" target="_blank"><i class="fab fa-bandcamp"></i></a>
         <a href="https://open.spotify.com/artist/6BhCcNhioIJmU7LUEL5C0j?si=3K0lznEZSqSwqZMv8Yqr8g" target="_blank"><i class="fab fa-spotify"></i></a>
     </div>
+
+   <script>
+let currentLang = "en";
+
+function setLanguage(lang) {
+    const en = document.querySelectorAll(".en");
+    const pt = document.querySelectorAll(".pt");
+    const button = document.getElementById("langToggle");
+
+    if (lang === "pt") {
+        en.forEach(el => el.style.display = "none");
+        pt.forEach(el => el.style.display = "inline");
+        button.innerText = "EN";
+        currentLang = "pt";
+    } else {
+        en.forEach(el => el.style.display = "inline");
+        pt.forEach(el => el.style.display = "none");
+        button.innerText = "PT";
+        currentLang = "en";
+    }
+}
+
+// Detect browser language on load
+document.addEventListener("DOMContentLoaded", () => {
+    const browserLang = navigator.language || navigator.userLanguage;
+
+    if (browserLang.toLowerCase().startsWith("pt")) {
+        setLanguage("pt");
+    } else {
+        setLanguage("en");
+    }
+});
+
+// Toggle on button click
+document.getElementById("langToggle").addEventListener("click", () => {
+    setLanguage(currentLang === "en" ? "pt" : "en");
+});
+</script>
 </body>
 </html>
